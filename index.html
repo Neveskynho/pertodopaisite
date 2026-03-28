@@ -115,13 +115,42 @@
   }
   p strong { color: var(--text); }
 
-  /* strong em fundos escuros sempre branco */
+  /* ── CONTRASTE: fundos escuros (navy / marrom) ── */
   .hero p strong,
   .solution p strong,
   .testimonials p strong,
-  .guarantee p strong,
+  .guarantee-text p strong,
   .offer p strong,
   .final-cta p strong { color: #fff; }
+
+  /* ── CONTRASTE: benefit-list usa div, não p ── */
+  .benefit-list li div { color: var(--text); font-size: 0.93rem; }
+  .benefit-list li div strong { color: var(--navy); }
+
+  /* ── CONTRASTE: product-box (fundo creme) ── */
+  .product-box p { color: var(--text); }
+
+  /* ── CONTRASTE: pain-card texto mais legível ── */
+  .pain-card p { color: var(--text); }
+
+  /* ── CONTRASTE: objeções (fundo gold-pale) ── */
+  .obj-a { color: var(--text) !important; }
+
+  /* ── CONTRASTE: includes e bonus (fundos claros) ── */
+  .include-item p { color: var(--text) !important; }
+  .bonus-card p   { color: var(--text) !important; }
+
+  /* ── CONTRASTE: depoimentos role mais visível ── */
+  .testi-role { color: rgba(255,255,255,0.65) !important; }
+
+  /* ── CONTRASTE: footer mais legível ── */
+  footer p { color: rgba(255,255,255,0.55) !important; }
+
+  /* ── CONTRASTE: how/steps texto ── */
+  .step-text p { color: var(--text) !important; }
+
+  /* ── CONTRASTE: secure-note ── */
+  .secure-note { color: #777 !important; }
 
   /* =============================================
      HERO
@@ -217,12 +246,7 @@
   .solution { background: var(--navy); color: #fff; text-align: center; }
   .solution h2 { color: #fff; }
   .solution h2 span { color: var(--gold-light); }
-  .solution p { color: rgba(255,255,255,0.78); }
-  .solution p strong { color: #fff; }
-  .testimonials p strong { color: #fff; }
-  .guarantee-text p strong { color: #fff; }
-  .final-cta p strong { color: #fff; }
-  .offer p strong { color: var(--navy); }
+  .solution p { color: rgba(255,255,255,0.88); }
 
   .product-box {
     background: linear-gradient(135deg, #fff8ee, #fff);
