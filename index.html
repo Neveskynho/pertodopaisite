@@ -1,952 +1,402 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>+300 Brincadeiras Bíblicas para Crianças</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<style>
-  /* =============================================
-     VARIÁVEIS
-  ============================================= */
-  :root {
-    --gold: #C9973A;
-    --gold-light: #F0C96B;
-    --gold-pale: #FDF5E6;
-    --navy: #1A2744;
-    --navy-mid: #243258;
-    --cream: #FEFAF3;
-    --warm-white: #FFFDF8;
-    --text: #2C2C2C;
-    --text-light: #5A5A5A;
-    --green: #2E7D52;
-    --green-light: #E8F5EE;
-    --red-cta: #C0392B;
-    --red-cta-dark: #96281B;
-  }
-
-  /* =============================================
-     RESET & BASE — MOBILE FIRST
-  ============================================= */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
-
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--warm-white);
-    color: var(--text);
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  img, svg { max-width: 100%; display: block; }
-
-  /* =============================================
-     ANIMAÇÕES
-  ============================================= */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.4; }
-    50%       { opacity: 0.9; }
-  }
-
-  /* =============================================
-     URGENCY BAR
-  ============================================= */
-  .urgency-bar {
-    background: var(--red-cta);
-    color: #fff;
-    text-align: center;
-    padding: 10px 16px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    line-height: 1.5;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(192,57,43,0.4);
-  }
-  .urgency-bar span { font-weight: 400; opacity: 0.9; }
-
-  /* =============================================
-     SEÇÕES BASE
-  ============================================= */
-  section { padding: 56px 18px; width: 100%; }
-
-  .container {
-    width: 100%;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-
-  /* =============================================
-     TIPOGRAFIA BASE (mobile)
-  ============================================= */
-  .section-label {
-    display: inline-block;
-    color: var(--gold);
-    font-size: 0.7rem;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.55rem;
-    line-height: 1.3;
-    color: var(--navy);
-    margin-bottom: 16px;
-    word-wrap: break-word;
-  }
-  h2 span { color: var(--gold); }
-
-  p {
-    font-size: 0.97rem;
-    line-height: 1.8;
-    color: var(--text-light);
-    margin-bottom: 14px;
-    word-wrap: break-word;
-  }
-  p strong { color: var(--text); }
-
-  /* ── CONTRASTE: fundos escuros (navy / marrom) ── */
-  .hero p strong,
-  .solution p strong,
-  .testimonials p strong,
-  .guarantee-text p strong,
-  .offer p strong,
-  .final-cta p strong { color: #fff; }
-
-  /* ── CONTRASTE: benefit-list usa div, não p ── */
-  .benefit-list li div { color: var(--text); font-size: 0.93rem; }
-  .benefit-list li div strong { color: var(--navy); }
-
-  /* ── CONTRASTE: product-box (fundo creme) ── */
-
-  /* ── CONTRASTE: pain-card texto mais legível ── */
-  .pain-card p { color: var(--text); }
-
-  /* ── CONTRASTE: objeções (fundo gold-pale) ── */
-  .obj-a { color: var(--text) !important; }
-
-  /* ── CONTRASTE: includes e bonus (fundos claros) ── */
-  .include-item p { color: var(--text) !important; }
-  .bonus-card p   { color: var(--text) !important; }
-
-  /* ── CONTRASTE: depoimentos role mais visível ── */
-  .testi-role { color: rgba(255,255,255,0.65) !important; }
-
-  /* ── CONTRASTE: footer mais legível ── */
-  footer p { color: rgba(255,255,255,0.55) !important; }
-
-  /* ── CONTRASTE: how/steps texto ── */
-  .step-text p { color: var(--text) !important; }
-
-  /* ── CONTRASTE: secure-note ── */
-  .secure-note { color: #777 !important; }
-
-  /* =============================================
-     HERO
-  ============================================= */
-  .hero {
-    background: linear-gradient(160deg, var(--navy) 0%, #0F1A35 60%, #1E2E50 100%);
-    position: relative;
-    overflow: hidden;
-    padding: 52px 18px 60px;
-    text-align: center;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(201,151,58,0.18);
-    border: 1px solid rgba(201,151,58,0.45);
-    color: var(--gold-light);
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.25;
-    margin: 0 auto 18px;
-    animation: fadeDown 0.9s 0.1s ease both;
-    word-wrap: break-word;
-  }
-  .hero h1 span { color: var(--gold-light); font-style: italic; }
-
-  .hero-sub {
-    font-size: 0.97rem;
-    color: rgba(255,255,255,0.82);
-    margin: 0 auto 30px;
-    line-height: 1.75;
-    font-weight: 300;
-    animation: fadeDown 1s 0.2s ease both;
-  }
-
-  .hero-cta {
-    display: block;
-    width: 100%;
-    background: linear-gradient(135deg, var(--red-cta), var(--red-cta-dark));
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 18px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(192,57,43,0.4);
-    transition: transform 0.2s, box-shadow 0.2s;
-    animation: fadeDown 1.1s 0.3s ease both;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  .hero-scroll-hint {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 36px;
-    animation: pulse 2s infinite;
-  }
-
-  /* =============================================
-     DOR
-  ============================================= */
-  .pain { background: var(--cream); border-top: 4px solid var(--gold); }
-
-  .pain-card {
-    background: #fff;
-    border-left: 4px solid var(--gold);
-    border-radius: 4px 10px 10px 4px;
-    padding: 16px 18px;
-    margin-bottom: 14px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  .pain-card p { margin-bottom: 0; font-size: 0.93rem; }
-  .pain-card strong { color: var(--navy); }
-
-  /* =============================================
-     SOLUÇÃO
-  ============================================= */
-  .solution { background: var(--navy); color: #fff; text-align: center; }
-  .solution h2 { color: #fff; }
-  .solution h2 span { color: var(--gold-light); }
-  .solution p { color: rgba(255,255,255,0.88); }
-
-  .product-box {
-    background: linear-gradient(135deg, #fff8ee, #fff);
-    border: 2px solid var(--gold);
-    border-radius: 16px;
-    padding: 24px 20px;
-    margin-top: 28px;
-    text-align: left;
-    box-shadow: 0 12px 40px rgba(201,151,58,0.18);
-  }
-  .product-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--navy);
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-  .product-box p { color: var(--text); margin-bottom: 0; font-size: 0.93rem; }
-  .product-box p strong { color: var(--navy); }
-
-  /* =============================================
-     BENEFÍCIOS
-  ============================================= */
-  .benefits { background: var(--gold-pale); }
-
-  .benefit-list { list-style: none; margin-top: 24px; }
-  .benefit-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(201,151,58,0.2);
-    font-size: 0.93rem;
-    line-height: 1.7;
-    color: var(--text);
-  }
-  .benefit-list li:last-child { border-bottom: none; }
-
-  .benefit-icon {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    background: var(--gold);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    margin-top: 1px;
-  }
-
-  /* =============================================
-     INCLUDES
-  ============================================= */
-  .includes { background: #fff; }
-
-  .include-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  .include-item {
-    background: var(--green-light);
-    border-top: 3px solid var(--green);
-    border-radius: 0 0 10px 10px;
-    padding: 20px 18px;
-    text-align: center;
-  }
-  .include-item .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-  .include-item h4 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
-  .include-item p { font-size: 0.87rem; color: var(--text-light); margin-bottom: 0; }
-
-  /* =============================================
-     COMO FUNCIONA
-  ============================================= */
-  .how { background: var(--cream); }
-
-  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
-
-  .step {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px dashed rgba(201,151,58,0.3);
-  }
-  .step:last-child { border-bottom: none; }
-
-  .step-num {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    background: var(--navy);
-    color: var(--gold-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 900;
-  }
-  .step-text h4 { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
-  .step-text p { font-size: 0.9rem; margin-bottom: 0; }
-
-  /* =============================================
-     DEPOIMENTOS
-  ============================================= */
-  .testimonials { background: var(--navy); }
-  .testimonials h2 { color: #fff; }
-  .testimonials h2 span { color: var(--gold-light); }
-
-  .testi-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 28px;
-  }
-
-  .testi-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(201,151,58,0.3);
-    border-radius: 14px;
-    padding: 22px 18px;
-  }
-  .testi-stars { color: var(--gold-light); font-size: 0.95rem; margin-bottom: 12px; letter-spacing: 2px; }
-  .testi-card p { color: rgba(255,255,255,0.85); font-size: 0.9rem; font-style: italic; line-height: 1.75; margin-bottom: 16px; }
-  .testi-author { color: var(--gold-light); font-weight: 700; font-size: 0.85rem; }
-  .testi-role { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
-
-  /* =============================================
-     OBJEÇÕES
-  ============================================= */
-  .objections { background: #fff; }
-
-  .obj-item {
-    border-left: 4px solid var(--gold);
-    background: var(--gold-pale);
-    border-radius: 4px 10px 10px 4px;
-    padding: 18px 16px;
-    margin-bottom: 16px;
-  }
-  .obj-q { font-weight: 700; color: var(--navy); font-size: 0.93rem; margin-bottom: 8px; line-height: 1.5; }
-  .obj-a { font-size: 0.9rem; color: var(--text-light); line-height: 1.75; margin-bottom: 0; }
-
-  /* =============================================
-     BÔNUS
-  ============================================= */
-  .bonus { background: var(--green-light); }
-  .bonus h2 { color: var(--navy); }
-
-  .bonus-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 28px;
-  }
-
-  .bonus-card {
-    background: #fff;
-    border: 2px solid var(--green);
-    border-radius: 14px;
-    padding: 26px 20px 22px;
-    position: relative;
-    overflow: hidden;
-  }
-  .bonus-card::before {
-    content: 'BÔNUS';
-    position: absolute;
-    top: 13px;
-    right: -22px;
-    background: var(--green);
-    color: #fff;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 5px 30px;
-    transform: rotate(35deg);
-  }
-  .bonus-card .icon { font-size: 2rem; margin-bottom: 14px; display: block; }
-  .bonus-card h4 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.05rem; margin-bottom: 8px; line-height: 1.35; }
-  .bonus-card p { font-size: 0.88rem; color: var(--text-light); margin-bottom: 12px; }
-  .bonus-value { font-size: 0.8rem; color: var(--green); font-weight: 700; }
-
-  /* =============================================
-     OFERTA
-  ============================================= */
-  .offer {
-    background: linear-gradient(135deg, #0F1A35, var(--navy-mid));
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .offer h2 { color: #fff; }
-  .offer h2 span { color: var(--gold-light); }
-
-  .offer-box {
-    background: #fff;
-    border-radius: 18px;
-    padding: 44px 18px 28px;
-    max-width: 520px;
-    margin: 30px auto 0;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    position: relative;
-  }
-
-  .offer-tag {
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: #fff;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 7px 20px;
-    border-radius: 30px;
-    white-space: nowrap;
-  }
-
-  .offer-product-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    color: var(--navy);
-    margin-bottom: 5px;
-    line-height: 1.35;
-  }
-  .offer-subtitle { font-size: 0.82rem; color: var(--text-light); margin-bottom: 22px; }
-
-  .price-old { font-size: 0.9rem; color: #aaa; text-decoration: line-through; margin-bottom: 4px; }
-  .price-new {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: var(--navy);
-    line-height: 1;
-    margin-bottom: 5px;
-  }
-  .price-new span { font-size: 1.5rem; }
-  .price-desc { font-size: 0.8rem; color: var(--text-light); margin-bottom: 22px; }
-
-  .cta-btn {
-    display: block;
-    width: 100%;
-    background: linear-gradient(135deg, #27AE60, #1E8449);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 20px 18px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(39,174,96,0.38);
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 12px;
-    line-height: 1.35;
-    text-align: center;
-  }
-  .cta-btn .cta-sub { display: block; font-size: 0.73rem; font-weight: 400; opacity: 0.88; margin-top: 4px; }
-  .secure-note { font-size: 0.76rem; color: #aaa; margin-top: 8px; margin-bottom: 0; }
-
-  /* =============================================
-     GARANTIA
-  ============================================= */
-  .guarantee { background: var(--navy); text-align: center; }
-  .guarantee h2 { color: #fff; }
-  .guarantee h2 span { color: var(--gold-light); }
-
-  .guarantee-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(201,151,58,0.3);
-    border-radius: 18px;
-    padding: 28px 18px;
-    max-width: 580px;
-    margin: 28px auto 0;
-    text-align: center;
-  }
-  .guarantee-badge {
-    width: 76px;
-    height: 76px;
-    min-width: 76px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-  }
-  .guarantee-text h4 { color: var(--gold-light); font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 8px; }
-  .guarantee-text p { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-bottom: 0; line-height: 1.7; }
-
-  /* =============================================
-     FINAL CTA
-  ============================================= */
-  .final-cta {
-    background: linear-gradient(160deg, #1C0A00, #3D1F00);
-    text-align: center;
-    padding: 72px 18px;
-    position: relative;
-    overflow: hidden;
-  }
-  .final-cta .section-label { color: var(--gold-light); }
-  .final-cta h2 { color: #fff; font-size: 1.55rem; margin: 0 auto 16px; }
-  .final-cta h2 span { color: var(--gold-light); }
-  .final-cta p { color: rgba(255,255,255,0.7); margin: 0 auto 32px; }
-  .final-cta .cta-btn { max-width: 100%; font-size: 1rem; padding: 20px 18px; }
-
-  .verse {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.38);
-    margin-top: 36px;
-    font-style: italic;
-    line-height: 1.6;
-    padding: 0 8px;
-  }
-
-  /* =============================================
-     FOOTER
-  ============================================= */
-  footer { background: #0A0F1E; text-align: center; padding: 24px 16px; }
-  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-bottom: 0; line-height: 1.7; }
-
-  /* =============================================
-     TABLET & DESKTOP — progressive enhancement
-  ============================================= */
-  @media (min-width: 600px) {
-    .urgency-bar { font-size: 0.9rem; padding: 13px 20px; }
-
-    section { padding: 80px 24px; }
-
-    h2 { font-size: 2rem; }
-    p  { font-size: 1.03rem; }
-
-    .hero { padding: 80px 24px 90px; }
-    .hero h1 { font-size: 2.4rem; }
-    .hero-sub { font-size: 1.1rem; }
-    .hero-cta { display: inline-block; width: auto; padding: 18px 44px; font-size: 1.1rem; }
-
-    .include-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .testi-grid   { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .bonus-grid   { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-    .offer-box { padding: 48px 36px 36px; }
-    .price-new { font-size: 3.4rem; }
-    .price-new span { font-size: 1.8rem; }
-    .cta-btn { font-size: 1.1rem; padding: 22px 32px; }
-
-    .guarantee-box { flex-direction: row; text-align: left; padding: 36px 36px; gap: 28px; }
-    .guarantee-badge { width: 90px; height: 90px; font-size: 2.4rem; }
-
-    .final-cta { padding: 100px 24px; }
-    .final-cta h2 { font-size: 2rem; }
-    .final-cta .cta-btn { max-width: 480px; display: inline-block; width: auto; }
-    .verse { font-size: 1.2rem; }
-  }
-
-  @media (min-width: 900px) {
-    h2 { font-size: 2.6rem; }
-    .hero h1 { font-size: 3.2rem; }
-    .hero-sub { font-size: 1.25rem; }
-    .include-grid { grid-template-columns: repeat(3, 1fr); }
-    .testi-grid   { grid-template-columns: repeat(3, 1fr); }
-    .final-cta h2 { font-size: 2.8rem; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>+300 Brincadeiras Bíblicas para Crianças</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-  🔥 OFERTA POR TEMPO LIMITADO — De R$49,90 por apenas <strong>R$19,90</strong> <span>| Encerra em breve</span>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">✦ Para pais, professores e líderes cristãos ✦</div>
-  <h1>E se ensinar a Bíblia para seus filhos fosse <span>tão divertido quanto uma brincadeira?</span></h1>
-  <p class="hero-sub">Descubra as mais de 300 brincadeiras bíblicas que transformam crianças desinteressadas em crianças apaixonadas por Deus — sem precisar ser pastor, pedagogo ou ter horas livres.</p>
-  <a href="https://pay.cakto.com.br/39jukvr_818091" class="hero-cta">✨ Quero ensinar meus filhos com propósito</a>
-  <p class="hero-scroll-hint">▼ continue lendo ▼</p>
-</section>
-
-<!-- DOR -->
-<section class="pain">
-  <div class="container">
-    <span class="section-label">Você se identifica?</span>
-    <h2>A luta real de quem quer ensinar a fé para as crianças…</h2>
-    <p>Você ama Deus. Você quer que seus filhos — ou as crianças do seu ministério — também amem. Mas quando chega a hora de ensinar, bate aquela travada. Você já passou por isso?</p>
-
-    <div class="pain-card">
-      <p>😔 <strong>"Já tentei contar histórias bíblicas e as crianças ficam olhando pro teto após 3 minutos..."</strong> — Você faz o possível, mas a atenção delas vai embora rápido demais.</p>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shapes">
+      <span class="shape shape--1"></span>
+      <span class="shape shape--2"></span>
+      <span class="shape shape--3"></span>
     </div>
-    <div class="pain-card">
-      <p>😰 <strong>"A escola bíblica tá parecendo obrigação pra elas, não algo que elas amam..."</strong> — E você sente que está perdendo uma janela preciosa na vida delas.</p>
-    </div>
-    <div class="pain-card">
-      <p>😓 <strong>"Não sou criativo(a) o suficiente para inventar atividades por conta própria..."</strong> — A semana passa voando e você entra na aula de mãos vazias, improvisando.</p>
-    </div>
-    <div class="pain-card">
-      <p>🙁 <strong>"Quero que meu filho aprenda valores cristãos, mas ele só quer saber de tela..."</strong> — A concorrência é dura. E o evangelho precisa ser apresentado de um jeito que prenda a atenção.</p>
-    </div>
-
-    <p style="margin-top: 30px;">Se você se identificou com pelo menos um desses cenários, saiba: <strong>você não está sozinho(a). E tem solução.</strong></p>
-  </div>
-</section>
-
-<!-- SOLUÇÃO -->
-<section class="solution">
-  <div class="container">
-    <span class="section-label" style="color: var(--gold-light);">A solução que você estava esperando</span>
-    <h2>Apresentando: <span>+300 Brincadeiras Bíblicas para Crianças</span></h2>
-    <p>Um material completo, prático e cheio de amor, criado especialmente para quem quer plantar a semente da fé no coração das crianças — de um jeito que elas vão amar, lembrar e querer repetir.</p>
-    <p>São <strong>mais de 300 brincadeiras dinâmicas, criativas e cheias de significado bíblico</strong> que funcionam em casa, na escola bíblica, no ministério infantil ou em qualquer reunião com crianças.</p>
-
-    <div class="product-box">
-      <h3>📖 +300 Brincadeiras Bíblicas para Crianças</h3>
-      <p>Cada brincadeira foi pensada para <strong>ensinar um valor ou princípio bíblico</strong> enquanto a criança ri, brinca e se move. Porque criança aprende melhor quando está feliz.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="benefits">
-  <div class="container">
-    <span class="section-label">Por que isso funciona?</span>
-    <h2>Tudo que você ganha ao colocar esse material nas mãos das suas crianças</h2>
-
-    <ul class="benefit-list">
-      <li>
-        <div class="benefit-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6.5" y="1" width="3" height="14" rx="1" fill="white"/>
-            <rect x="1" y="5.5" width="14" height="3" rx="1" fill="white"/>
-          </svg>
+    <div class="container hero__inner">
+      <div class="hero__text fade-in">
+        <p class="hero__tag">✨ Para pais, professores e líderes infantis</p>
+        <h1 class="hero__headline">
+          Transforme momentos comuns em
+          <span class="highlight">experiências inesquecíveis</span>
+          com seus filhos
+        </h1>
+        <p class="hero__sub">
+          Acesse hoje mesmo <strong>+300 brincadeiras bíblicas</strong> prontas para usar —
+          em casa, na escola ou na igreja — e veja seus filhos aprenderem a Palavra de Deus <strong>sorrindo</strong>.
+        </p>
+        <a href="#order" class="btn btn--primary btn--lg hero__cta">
+          🎉 Quero Acessar Agora
+        </a>
+        <p class="hero__reassurance">🔒 Acesso imediato · 7 dias de garantia · Pagamento seguro</p>
+      </div>
+      <div class="hero__mockup fade-in fade-in--delay">
+        <div class="product-cover">
+          <div class="product-cover__inner">
+            <div class="product-cover__cross">✞</div>
+            <p class="product-cover__label">+300</p>
+            <h2 class="product-cover__title">Brincadeiras<br/>Bíblicas</h2>
+            <p class="product-cover__sub">para Crianças</p>
+            <div class="product-cover__stars">⭐⭐⭐⭐⭐</div>
+          </div>
         </div>
-        <div><strong>Crianças que fixam os ensinamentos bíblicos de verdade</strong> — porque aprendemos melhor quando nos divertimos. Cada brincadeira tem um versículo ou valor cristão embutido.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">❤️</div>
-        <div><strong>Momentos de conexão profunda entre pais e filhos</strong> — brincando juntos ao redor da Palavra. Momentos que se tornam memórias e formam caráter.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">⚡</div>
-        <div><strong>Zero improvisação</strong> — você abre o material, escolhe a brincadeira e já sabe o que fazer. Simples assim. Nenhuma habilidade especial necessária.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">🕊️</div>
-        <div><strong>Crianças mais engajadas na fé</strong> — quando a experiência com Deus é divertida na infância, ela se torna paixão na adolescência e vocação na vida adulta.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">📋</div>
-        <div><strong>Planejamento de aulas em minutos</strong> — ideal para professores de escola bíblica e líderes que precisam preparar encontros semanais sem estresse.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">🏠</div>
-        <div><strong>Funciona em qualquer lugar</strong> — em casa, na igreja, no quintal, em viagens, em retiros. Não precisa de equipamentos caros nem estrutura especial.</div>
-      </li>
-      <li>
-        <div class="benefit-icon">🌱</div>
-        <div><strong>Você planta sementes eternas</strong> — o investimento de hoje em diversão e fé pode salvar a vida de uma criança amanhã. Isso não tem preço.</div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- INCLUDES -->
-<section class="includes">
-  <div class="container">
-    <span class="section-label">O que está dentro</span>
-    <h2>O que você recebe ao acessar o material</h2>
-    <p>Cada detalhe foi pensado para tornar sua vida mais fácil e a experiência das crianças mais rica:</p>
-
-    <div class="include-grid">
-      <div class="include-item">
-        <span class="icon">🎮</span>
-        <h4>+300 Brincadeiras Completas</h4>
-        <p>Cada brincadeira com nome, objetivo, materiais, passo a passo e o valor bíblico trabalhado.</p>
-      </div>
-      <div class="include-item">
-        <span class="icon">📖</span>
-        <h4>Versículos Relacionados</h4>
-        <p>Cada atividade acompanha um versículo para reforçar a lição de forma natural e contextualizada.</p>
-      </div>
-      <div class="include-item">
-        <span class="icon">🎯</span>
-        <h4>Faixa Etária Indicada</h4>
-        <p>Saiba exatamente quais brincadeiras são ideais para cada fase: 3-6 anos, 7-10 anos e 11-12 anos.</p>
-      </div>
-      <div class="include-item">
-        <span class="icon">⏱️</span>
-        <h4>Tempo de Duração</h4>
-        <p>Brincadeiras de 5 a 30 minutos para encaixar em qualquer momento da sua rotina ou culto.</p>
-      </div>
-      <div class="include-item">
-        <span class="icon">🏆</span>
-        <h4>Temas e Valores Cristãos</h4>
-        <p>Amor, perdão, gratidão, fé, amizade, respeito — os pilares da vida cristã ensinados de forma lúdica.</p>
-      </div>
-      <div class="include-item">
-        <span class="icon">💡</span>
-        <h4>Dicas de Aplicação</h4>
-        <p>Orientações práticas para adaptar cada brincadeira ao seu contexto — individual, em grupo pequeno ou grande turma.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="container">
-    <span class="section-label">Simples assim</span>
-    <h2>Como funciona na <span>prática</span></h2>
-    <p>Não precisa de experiência pedagógica. Não precisa de horas de preparação. Funciona para mães de primeira viagem, professores veteranos e líderes atarefados.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <h4>Acesse o material imediatamente</h4>
-          <p>Após a compra, você recebe acesso instantâneo ao arquivo digital. Pode ler no celular, tablet ou computador — onde for mais conveniente para você.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <h4>Escolha a brincadeira certa para o momento</h4>
-          <p>Filtre por tema bíblico, faixa etária ou tempo disponível. Em menos de 2 minutos você já sabe o que fazer e por quê está fazendo.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <h4>Coloque em prática — e se surpreenda</h4>
-          <p>Veja as crianças gargalhando, participando e, no final, fazendo perguntas sobre Deus. Esse é o momento que você vai querer viver de novo e de novo.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-text">
-          <h4>Colha os frutos ao longo da vida</h4>
-          <p>Sementes plantadas com alegria crescem fortes. Você está investindo no caráter e na espiritualidade de uma criança — e isso muda destinos.</p>
+        <div class="product-badge">
+          <span>🚀 Acesso<br/>Imediato</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="container">
-    <span class="section-label" style="color: var(--gold-light);">Quem já usou, aprovou</span>
-    <h2>Veja o que pais e líderes estão <span>dizendo</span></h2>
-
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Minha filha de 7 anos pediu pra brincar de novo no dia seguinte. Mas o mais incrível é que ela me contou o versículo de cabeça! Isso nunca tinha acontecido antes."</p>
-        <div class="testi-author">Camila R.</div>
-        <div class="testi-role">Mãe, Belo Horizonte - MG</div>
+  <!-- ===== SEÇÃO DE DOR ===== -->
+  <section class="pain" id="pain">
+    <div class="container">
+      <p class="section__eyebrow">Você se identifica com isso?</p>
+      <h2 class="section__title">Criar momentos com significado<br/>não deveria ser tão difícil…</h2>
+      <div class="pain__grid">
+        <div class="pain__card fade-in">
+          <span class="pain__icon">📱</span>
+          <p>"Meu filho só quer saber de celular. Não sei como prender a atenção dele."</p>
+        </div>
+        <div class="pain__card fade-in">
+          <span class="pain__icon">😟</span>
+          <p>"Quero ensinar valores cristãos, mas não sei por onde começar."</p>
+        </div>
+        <div class="pain__card fade-in">
+          <span class="pain__icon">💭</span>
+          <p>"Fico sem ideias de atividades divertidas e que tenham propósito."</p>
+        </div>
+        <div class="pain__card fade-in">
+          <span class="pain__icon">⏰</span>
+          <p>"Não tenho tempo para planejar dinâmicas. Preciso de algo pronto."</p>
+        </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Sou professora de escola bíblica há 8 anos e esse material virou minha salvação. Chegou um momento que eu não tinha mais ideias. Agora tenho material pra meses."</p>
-        <div class="testi-author">Pastora Cláudia M.</div>
-        <div class="testi-role">Líder de Ministério Infantil, Recife - PE</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Pensava que não sabia ensinar. Mas o passo a passo é tão claro que na primeira brincadeira já vi os olhinhos das crianças brilhando. Deus abençoe quem fez isso."</p>
-        <div class="testi-author">André L.</div>
-        <div class="testi-role">Pai de três, São Paulo - SP</div>
-      </div>
+      <div class="pain__arrow">↓</div>
+      <p class="pain__bridge">Se você já sentiu isso, a solução chegou.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- OBJECTIONS -->
-<section class="objections">
-  <div class="container">
-    <span class="section-label">Suas dúvidas respondidas</span>
-    <h2>Pensamentos que podem estar passando pela sua cabeça agora…</h2>
-
-    <div class="obj-item">
-      <p class="obj-q">❓ "Não tenho tempo para preparar atividades elaboradas."</p>
-      <p class="obj-a">Exatamente por isso esse material existe. Cada brincadeira tem tudo pronto: objetivo, materiais (simples e baratos), passo a passo e versículo. Em 5 minutos você está preparado. Sem estresse, sem enrolação.</p>
-    </div>
-
-    <div class="obj-item">
-      <p class="obj-q">❓ "Não sou pedagogo(a) nem tenho formação para isso."</p>
-      <p class="obj-a">Não precisa. O material foi escrito em linguagem simples, para qualquer pessoa que ame crianças e queira ensinar o evangelho. Se você sabe brincar, você consegue usar isso.</p>
-    </div>
-
-    <div class="obj-item">
-      <p class="obj-q">❓ "As crianças do meu ministério são muito agitadas para atividades assim."</p>
-      <p class="obj-a">Ótima notícia: as brincadeiras foram pensadas <em>exatamente</em> para crianças agitadas! Elas usam a energia das crianças a favor do aprendizado. Quanto mais animadas, mais aprendem.</p>
-    </div>
-
-    <div class="obj-item">
-      <p class="obj-q">❓ "E se eu comprar e não gostar?"</p>
-      <p class="obj-a">Você tem 7 dias de garantia total. Se por qualquer motivo sentir que não foi o que esperava, basta entrar em contato e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
-    </div>
-
-    <div class="obj-item">
-      <p class="obj-q">❓ "R$19,90 é um bom investimento para um produto digital?"</p>
-      <p class="obj-a">Pense assim: uma saída à sorveteria com as crianças custa mais do que isso e passa em 30 minutos. Esse material vai te servir por meses, talvez anos — e vai plantar sementes para a eternidade. Vale cada centavo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BONUS -->
-<section class="bonus">
-  <div class="container">
-    <span class="section-label">Surpresa especial para você</span>
-    <h2>Ganhe <span style="color: var(--green);">2 bônus exclusivos</span> na sua compra hoje</h2>
-    <p>Além das mais de 300 brincadeiras, você recebe mais dois presentes que vão complementar a sua jornada de educação cristã:</p>
-
-    <div class="bonus-grid">
-      <div class="bonus-card">
-        <span class="icon">📝</span>
-        <h4>Bônus #1 — Guia de Oração Infantil</h4>
-        <p>Um roteiro simples e lindo para ensinar crianças a orarem com espontaneidade e fé. Inclui exemplos de orações por temas (família, escola, amigos, medos) e dicas para tornar a oração um momento especial todo dia.</p>
-        <span class="bonus-value">Valor: R$17,90 — Grátis pra você!</span>
-      </div>
-      <div class="bonus-card">
-        <span class="icon">📅</span>
-        <h4>Bônus #2 — Calendário Bíblico Mensal para Crianças</h4>
-        <p>Um planner mensal com 30 versículos curtos para memorizar, um por dia. Funciona como uma corrida de fé — a criança marca o versículo do dia e vai vendo seu progresso. Perfeito para fixar a Palavra no coração delas.</p>
-        <span class="bonus-value">Valor: R$14,90 — Grátis pra você!</span>
+  <!-- ===== SEÇÃO DE TRANSFORMAÇÃO ===== -->
+  <section class="transform" id="transform">
+    <div class="container">
+      <p class="section__eyebrow">Com +300 Brincadeiras Bíblicas você vai…</p>
+      <h2 class="section__title">Viver momentos que seus filhos<br/><span class="highlight">nunca vão esquecer</span></h2>
+      <div class="transform__grid">
+        <div class="transform__item fade-in">
+          <div class="transform__icon">💛</div>
+          <h3>Conexão real</h3>
+          <p>Fortaleça o vínculo com seus filhos em brincadeiras cheias de amor e aprendizado.</p>
+        </div>
+        <div class="transform__item fade-in">
+          <div class="transform__icon">📖</div>
+          <h3>Bíblia de forma divertida</h3>
+          <p>Ensine a Palavra de Deus de um jeito que a criança entende, sorri e guarda no coração.</p>
+        </div>
+        <div class="transform__item fade-in">
+          <div class="transform__icon">🙌</div>
+          <h3>Crianças mais engajadas</h3>
+          <p>Diga adeus ao "tô entediado". As brincadeiras foram pensadas para prender a atenção.</p>
+        </div>
+        <div class="transform__item fade-in">
+          <div class="transform__icon">🏡</div>
+          <h3>Família mais unida</h3>
+          <p>Momentos em família com propósito. Memórias afetivas que duram a vida toda.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- OFFER -->
-<section class="offer" id="oferta">
-  <div class="container" style="text-align:center;">
-    <span class="section-label" style="color: var(--gold-light);">Sua hora é agora</span>
-    <h2>Tudo isso por um valor que <span>cabe no seu bolso</span></h2>
-    <p style="color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto;">Você recebe o material completo + 2 bônus exclusivos por um preço simbólico — porque acreditamos que toda criança merece crescer conhecendo a Deus.</p>
+  <!-- ===== O QUE VOCÊ VAI ENCONTRAR ===== -->
+  <section class="contents" id="contents">
+    <div class="container">
+      <p class="section__eyebrow">O que está incluído</p>
+      <h2 class="section__title">Tudo que você precisa<br/>está aqui, pronto para usar</h2>
+      <div class="contents__grid">
+        <div class="contents__card fade-in">
+          <span class="contents__num">+300</span>
+          <h3>Brincadeiras prontas</h3>
+          <p>Atividades bíblicas completas, testadas e aprovadas por famílias e igrejas.</p>
+        </div>
+        <div class="contents__card fade-in">
+          <span class="contents__num">🎂</span>
+          <h3>Para todas as idades</h3>
+          <p>Do maternal ao pré-adolescente. Cada faixa etária tem atividades adequadas.</p>
+        </div>
+        <div class="contents__card fade-in">
+          <span class="contents__num">🏫</span>
+          <h3>Casa, igreja e escola</h3>
+          <p>Dinâmicas adaptáveis a qualquer ambiente. Sem precisar de materiais caros.</p>
+        </div>
+        <div class="contents__card fade-in">
+          <span class="contents__num">⚡</span>
+          <h3>Explicações simples</h3>
+          <p>Instruções diretas, fáceis de entender e aplicar — mesmo sem experiência.</p>
+        </div>
+        <div class="contents__card fade-in">
+          <span class="contents__num">✝️</span>
+          <h3>Aplicação da Palavra</h3>
+          <p>Cada brincadeira conecta a diversão a uma lição bíblica real e significativa.</p>
+        </div>
+        <div class="contents__card fade-in">
+          <span class="contents__num">📲</span>
+          <h3>Acesso digital imediato</h3>
+          <p>Baixe agora e já comece a usar. Funciona no celular, tablet e computador.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="offer-box">
-      <div class="offer-tag">✦ OFERTA ESPECIAL ✦</div>
-      <p class="offer-product-name">+300 Brincadeiras Bíblicas para Crianças</p>
-      <p class="offer-subtitle">+ Guia de Oração Infantil + Calendário Bíblico Mensal</p>
+  <!-- ===== COMO FUNCIONA ===== -->
+  <section class="how" id="how">
+    <div class="container">
+      <p class="section__eyebrow">Simples assim</p>
+      <h2 class="section__title">Em menos de 2 minutos<br/>você já pode começar</h2>
+      <div class="how__steps">
+        <div class="how__step fade-in">
+          <div class="how__num">1</div>
+          <h3>Clique em comprar</h3>
+          <p>Escolha o que faz mais sentido para você. É rápido e seguro.</p>
+        </div>
+        <div class="how__arrow">→</div>
+        <div class="how__step fade-in">
+          <div class="how__num">2</div>
+          <h3>Preencha seus dados</h3>
+          <p>Escolha os extras que quiser e finalize com total segurança.</p>
+        </div>
+        <div class="how__arrow">→</div>
+        <div class="how__step fade-in">
+          <div class="how__num">3</div>
+          <h3>Acesso imediato</h3>
+          <p>Receba o link no e-mail e comece a usar ainda hoje!</p>
+        </div>
+      </div>
+      <div class="how__badge fade-in">
+        ⚡ Acesso em menos de 2 minutos
+      </div>
+    </div>
+  </section>
 
-      <p class="price-old">De R$49,90</p>
-      <p class="price-new"><span>R$</span>19,90</p>
-      <p class="price-desc">Pagamento único · Acesso imediato · Para sempre seu</p>
+  <!-- ===== PROVA SOCIAL ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <p class="section__eyebrow">O que as famílias estão dizendo</p>
+      <h2 class="section__title">Mais de mil famílias já transformaram<br/>seus momentos</h2>
+      <div class="testimonials__grid">
+        <div class="testimonial fade-in">
+          <div class="testimonial__stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial__text">"Minha filha de 6 anos pediu pra fazer as brincadeiras todos os dias! Ela passou a pedir pra ler a Bíblia antes de dormir. Não acreditei quando aconteceu."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">AM</div>
+            <div>
+              <strong>Ana Maria S.</strong>
+              <span>Mãe de 2 filhos · São Paulo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial fade-in">
+          <div class="testimonial__stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial__text">"Sou professora de escola dominical e estava sempre repetindo as mesmas atividades. Com esse material, as crianças ficam animadas toda semana. Recomendo demais!"</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">RO</div>
+            <div>
+              <strong>Roberta Oliveira</strong>
+              <span>Professora de E.D. · Belo Horizonte</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial fade-in">
+          <div class="testimonial__stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial__text">"Meu marido e eu usamos no culto infantil da nossa igreja. Foi uma revolução! As crianças não querem mais ir embora. Simples, prático e cheio de significado."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">CL</div>
+            <div>
+              <strong>Claudia &amp; Ricardo L.</strong>
+              <span>Líderes de Ministério Infantil · Curitiba</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial fade-in">
+          <div class="testimonial__stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial__text">"Comprei sem muita expectativa e me surpreendi. É muito conteúdo de qualidade. Uso em casa com meus três filhos toda semana. Vale cada centavo!"</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">MP</div>
+            <div>
+              <strong>Marcos Pereira</strong>
+              <span>Pai de 3 filhos · Fortaleza</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <a href="https://pay.cakto.com.br/39jukvr_818091" class="cta-btn">
-        ✨ Sim! Quero ensinar meus filhos com propósito
-        <span class="cta-sub">Clique aqui e acesse agora mesmo por R$19,90</span>
+  <!-- ===== ORDER BUMPS ===== -->
+  <section class="order" id="order">
+    <div class="container">
+      <p class="section__eyebrow">Seu pedido</p>
+      <h2 class="section__title">Escolha o que você quer levar hoje</h2>
+
+      <!-- Produto principal -->
+      <div class="order__main fade-in">
+        <div class="order__main-badge">✅ Incluído no seu pedido</div>
+        <div class="order__main-info">
+          <h3>+300 Brincadeiras Bíblicas para Crianças</h3>
+          <p>Acesso digital imediato. Mais de 300 atividades prontas para usar em qualquer lugar.</p>
+        </div>
+        <div class="order__main-price">
+          <span class="price__old">De R$ 97,00</span>
+          <span class="price__current">R$ 37,00</span>
+        </div>
+      </div>
+
+      <!-- Order bumps -->
+      <p class="order__bumps-title">🎁 Potencialize ainda mais com esses extras:</p>
+      <div class="order__bumps" id="orderBumps">
+
+        <label class="bump" id="bump1">
+          <input type="checkbox" class="bump__check" data-price="17" data-id="bump1" />
+          <div class="bump__icon">🎤</div>
+          <div class="bump__info">
+            <h4>Dinâmicas para Culto Infantil</h4>
+            <p>50 dinâmicas exclusivas para tornar o culto infantil mais animado e participativo.</p>
+          </div>
+          <div class="bump__price">
+            <span class="price__old">R$ 37</span>
+            <span class="price__bump">+ R$ 17,00</span>
+          </div>
+        </label>
+
+        <label class="bump" id="bump2">
+          <input type="checkbox" class="bump__check" data-price="19" data-id="bump2" />
+          <div class="bump__icon">📚</div>
+          <div class="bump__info">
+            <h4>Histórias Bíblicas Ilustradas</h4>
+            <p>30 histórias bíblicas contadas de forma visual, simples e cativante para crianças.</p>
+          </div>
+          <div class="bump__price">
+            <span class="price__old">R$ 47</span>
+            <span class="price__bump">+ R$ 19,00</span>
+          </div>
+        </label>
+
+        <label class="bump" id="bump3">
+          <input type="checkbox" class="bump__check" data-price="15" data-id="bump3" />
+          <div class="bump__icon">🎄</div>
+          <div class="bump__info">
+            <h4>Atividades para Datas Especiais Cristãs</h4>
+            <p>Natal, Páscoa, Pentecostes e mais. Comemore as datas com atividades com propósito.</p>
+          </div>
+          <div class="bump__price">
+            <span class="price__old">R$ 29</span>
+            <span class="price__bump">+ R$ 15,00</span>
+          </div>
+        </label>
+
+      </div>
+
+      <!-- Totalizador -->
+      <div class="order__total fade-in" id="orderTotal">
+        <div class="order__total-row">
+          <span>Produto principal</span>
+          <span>R$ 37,00</span>
+        </div>
+        <div class="order__total-row" id="extrasRow" style="display:none;">
+          <span>Extras selecionados</span>
+          <span id="extrasValue">R$ 0,00</span>
+        </div>
+        <div class="order__total-final">
+          <span>Total</span>
+          <span id="totalValue">R$ 37,00</span>
+        </div>
+      </div>
+
+      <button class="btn btn--primary btn--xl order__cta" id="buyBtn">
+        🎉 Quero Acessar Agora — R$ <span id="ctaPrice">37,00</span>
+      </button>
+      <p class="order__guarantee-note">🔒 Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <!-- ===== QUEBRA DE OBJEÇÕES ===== -->
+  <section class="objections" id="objections">
+    <div class="container">
+      <p class="section__eyebrow">Sem complicação</p>
+      <h2 class="section__title">Esse material é para você,<br/>independente do seu perfil</h2>
+      <div class="objections__grid">
+        <div class="objection__card fade-in">
+          <span class="objection__icon">🙋</span>
+          <h3>"Não tenho experiência com dinâmicas"</h3>
+          <p>Não precisa! Todas as brincadeiras têm instruções claras e simples. Qualquer pessoa consegue aplicar.</p>
+        </div>
+        <div class="objection__card fade-in">
+          <span class="objection__icon">👶</span>
+          <h3>"Meu filho é muito pequeno (ou grande)"</h3>
+          <p>O material cobre todas as faixas etárias, do maternal ao pré-adolescente. Tem para todos!</p>
+        </div>
+        <div class="objection__card fade-in">
+          <span class="objection__icon">🏡</span>
+          <h3>"Não sei se funciona fora da igreja"</h3>
+          <p>Funciona em qualquer lugar! Em casa, na sala de aula, na praça. Basta querer e você usa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GARANTIA ===== -->
+  <section class="guarantee" id="guarantee">
+    <div class="container">
+      <div class="guarantee__box fade-in">
+        <div class="guarantee__seal">
+          <span class="guarantee__days">7</span>
+          <span class="guarantee__label">dias de<br/>garantia</span>
+        </div>
+        <div class="guarantee__text">
+          <h2>Risco zero para você</h2>
+          <p>Compre hoje com total segurança. Se por qualquer motivo você não ficar satisfeito nos primeiros <strong>7 dias</strong>, basta entrar em contato e devolvemos cada centavo sem perguntas. Sua confiança é sagrada para nós.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final" id="cta-final">
+    <div class="container cta-final__inner">
+      <div class="cta-final__bg-shapes">
+        <span class="shape shape--4"></span>
+      </div>
+      <p class="section__eyebrow cta-final__eyebrow">Não deixe para depois</p>
+      <h2 class="cta-final__title">
+        Seus filhos merecem momentos<br/>
+        <span class="highlight--light">cheios de amor e propósito</span>
+      </h2>
+      <p class="cta-final__sub">Comece hoje mesmo. Em menos de 2 minutos você já pode usar a primeira brincadeira.</p>
+      <a href="#order" class="btn btn--white btn--xl">
+        🎉 Quero Começar Agora
       </a>
-      <p class="secure-note">🔒 Compra segura · Pagamento criptografado · Satisfação garantida</p>
+      <p class="cta-final__note">✅ Acesso imediato · 🔒 Pagamento seguro · 💛 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 +300 Brincadeiras Bíblicas · Todos os direitos reservados</p>
+      <p><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a> · <a href="#">Contato</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÃO FIXO (STICKY) ===== -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="container sticky-cta__inner">
+      <p>+300 Brincadeiras Bíblicas — <strong>R$ <span id="stickyPrice">37,00</span></strong></p>
+      <a href="#order" class="btn btn--primary">🎉 Comprar Agora</a>
     </div>
   </div>
-</section>
 
-<!-- GUARANTEE -->
-<section class="guarantee">
-  <div class="container" style="text-align:center;">
-    <span class="section-label" style="color: var(--gold-light);">Sem risco nenhum</span>
-    <h2>Garantia de <span>7 Dias</span></h2>
-    <p style="color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto;">Experimente sem medo. Se você não ficar satisfeito(a) por qualquer motivo, devolvemos cada centavo.</p>
-
-    <div class="guarantee-box">
-      <div class="guarantee-badge">🛡️</div>
-      <div class="guarantee-text">
-        <h4>Garantia Total de 7 Dias</h4>
-        <p>Compre hoje, use o material, experimente as brincadeiras. Se em até 7 dias você achar que não valeu a pena — basta nos contatar e faremos o reembolso completo, sem perguntas e sem burocracia. A decisão de risco zero é sua.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container">
-    <span class="section-label">A decisão mais importante de hoje</span>
-    <h2>Sua criança está esperando por <span>um motivo para amar a Deus.</span><br>Você pode dar esse motivo agora.</h2>
-    <p>Cada dia que passa é um dia de infância que não volta. As crianças de hoje são os líderes, missionários e pais cristãos de amanhã. O que você plantar agora vai florir para a eternidade.</p>
-
-    <a href="https://pay.cakto.com.br/39jukvr_818091" class="cta-btn">
-      ✨ Quero ensinar meus filhos com propósito
-      <span class="cta-sub">Acesso imediato por apenas R$19,90 — com bônus inclusos</span>
-    </a>
-
-    <p class="verse">"Instrua a criança no caminho em que deve andar, e mesmo quando for velho não se desviará dele." — Provérbios 22:6</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 +300 Brincadeiras Bíblicas para Crianças · Todos os direitos reservados · Produto Digital</p>
-  <p style="margin-top: 8px;">Dúvidas? Entre em contato pelo e-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cf
+  <script src="script.js"></script>
+</body>
+</html>
