@@ -9,7 +9,7 @@
  */
 
 // ─── CONSTANTES ────────────────────────────────────────
-const BASE_PRICE = 37; // Preço base do produto principal (R$)
+const BASE_PRICE = 19.90; // Preço base do produto principal (R$)
 
 // ─── ESTADO DA APLICAÇÃO ───────────────────────────────
 let selectedExtras = {}; // { bumpId: price }
@@ -211,7 +211,7 @@ function handlePurchase() {
     '🎉 Pedido confirmado! (Simulação)',
     '',
     '📦 Seu pedido:',
-    '   ✅ +300 Brincadeiras Bíblicas — R$ 37,00',
+    '   ✅ +300 Brincadeiras Bíblicas — R$ 19,90',
     extrasList,
     '',
     `💰 Total: R$ ${formatBRL(grandTotal)}`,
