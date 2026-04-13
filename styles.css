@@ -1031,10 +1031,129 @@ section {
   .sticky-cta__inner p { text-align: center; width: 100%; }
 }
 
+
+/* =============================================
+   POPUP DE UPSELL
+   ============================================= */
+.upsell-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 40, 80, 0.72);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.upsell-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.upsell-modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.upsell-overlay.active .upsell-modal {
+  transform: translateY(0) scale(1);
+}
+
+.upsell-modal__badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 18px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.upsell-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.upsell-modal__sub {
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.upsell-modal__offer {
+  background: var(--color-yellow-soft);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.upsell-modal__old {
+  display: block;
+  font-size: 0.82rem;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+.upsell-modal__price {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-accent-dark);
+  margin-bottom: 14px;
+}
+.upsell-modal__items {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.upsell-modal__accept {
+  width: 100%;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.upsell-modal__decline {
+  background: none;
+  border: none;
+  color: var(--color-text-soft);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px;
+  transition: color var(--transition);
+}
+.upsell-modal__decline:hover {
+  color: var(--color-text);
+}
+
 @media (max-width: 480px) {
   .product-cover { width: 200px; height: 270px; }
   .product-cover__label { font-size: 2rem; }
   .product-cover__title { font-size: 1.1rem; }
   .btn--xl { padding: 16px 32px; font-size: 1rem; }
   .section__title { font-size: 1.45rem; }
+  .upsell-modal { padding: 28px 20px; }
+  .upsell-modal__title { font-size: 1.3rem; }
 }

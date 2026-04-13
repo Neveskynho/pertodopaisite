@@ -285,10 +285,10 @@
 
         <label class="bump" id="bump3">
           <input type="checkbox" class="bump__check" data-price="15" data-id="bump3" />
-          <div class="bump__icon">🎄</div>
+          <div class="bump__icon">🎙️</div>
           <div class="bump__info">
-            <h4>Atividades para Datas Especiais Cristãs</h4>
-            <p>Natal, Páscoa, Pentecostes e mais. Comemore as datas com atividades com propósito.</p>
+            <h4>Pregações Infantis Prontas</h4>
+            <p>30 esboços de mensagens completos, simples e cativantes para pregar para crianças de qualquer idade.</p>
           </div>
           <div class="bump__price">
             <span class="price__old">R$ 29</span>
@@ -394,6 +394,29 @@
     <div class="container sticky-cta__inner">
       <p>+300 Brincadeiras Bíblicas — <strong>R$ <span id="stickyPrice">19,90</span></strong></p>
       <a href="#order" class="btn btn--primary">🎉 Comprar Agora</a>
+    </div>
+  </div>
+
+  <!-- ===== POPUP DE UPSELL ===== -->
+  <div class="upsell-overlay" id="upsellOverlay">
+    <div class="upsell-modal">
+      <div class="upsell-modal__badge">🔥 Oferta especial para você</div>
+      <h2 class="upsell-modal__title">Espera! Antes de continuar…</h2>
+      <p class="upsell-modal__sub">
+        Que tal levar o <strong>Pacote Completo</strong> por um preço especial?
+        Você recebe tudo — brincadeiras, dinâmicas, histórias ilustradas e pregações prontas — por muito menos do que comprando separado.
+      </p>
+      <div class="upsell-modal__offer">
+        <span class="upsell-modal__old">De R$ 70,90</span>
+        <span class="upsell-modal__price">Pacote Completo em Promoção</span>
+        <span class="upsell-modal__items">✅ +300 Brincadeiras Bíblicas<br/>✅ Dinâmicas para Culto Infantil<br/>✅ Histórias Bíblicas Ilustradas<br/>✅ Pregações Infantis Prontas</span>
+      </div>
+      <button class="btn btn--primary btn--lg upsell-modal__accept" id="upsellAccept">
+        🎉 Sim! Quero o Pacote Completo com desconto
+      </button>
+      <button class="upsell-modal__decline" id="upsellDecline">
+        Não, obrigado. Quero continuar com meu pedido atual.
+      </button>
     </div>
   </div>
 
